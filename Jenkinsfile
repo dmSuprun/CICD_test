@@ -7,6 +7,12 @@ pipeline {
                 bat 'docker build -t dmsuprun/fastapi-app:latest .'
             }
         }
+        stage('Test application'){
+            steps{
+                bat 'docker run --rm dmsuprun/fastapi-app pytest'
+
+            }
+        }
 
         stage('Run container') {
             steps {

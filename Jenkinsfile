@@ -10,9 +10,8 @@ pipeline {
 
         stage('Run container') {
             steps {
-                bat 'docker stop fastapi || true'
-                bat 'docker rm fastapi || true'
-                bat 'docker run -d -p 8000:8000 --name fastapi dmsuprun/fastapi-app:latest'
+
+                bat 'docker run -p 8888:8888 dmsuprun/fastapi-app:latest'
             }
         }
     }

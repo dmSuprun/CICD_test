@@ -2,11 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Build Docker image') {
-            steps {
-                sh 'docker build -t dmsuprun/fastapi-app:latest .'
-            }
-        }
+     
         stage('Test application'){
             steps{
                 sh 'docker run --rm dmsuprun/fastapi-app pytest'
